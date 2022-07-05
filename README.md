@@ -29,7 +29,7 @@ ember install ember-data-storefront
 
 ## Usage
 
-[Longer description of how to use the addon in apps.]
+[View the docs here](https://embermap.github.io/ember-data-storefront/).
 
 
 ## Contributing

@@ -1,35 +1,25 @@
 'use strict';
 
 module.exports = {
-  globals: {
-    server: true,
-  },
   root: true,
   parser: 'babel-eslint',
   parserOptions: {
     ecmaVersion: 2018,
     sourceType: 'module',
     ecmaFeatures: {
-      legacyDecorators: true
-    }
+      legacyDecorators: true,
+    },
   },
-  plugins: [
-    'ember'
-  ],
+  plugins: ['ember'],
   extends: [
     'eslint:recommended',
     'plugin:ember/recommended',
     'plugin:prettier/recommended',
   ],
   env: {
-    browser: true
+    browser: true,
   },
-  rules: {
-    'ember/no-jquery': 'off',
-    'ember/no-mixins': 'off',
-    'ember/no-new-mixins': 'off',
-    'no-useless-escape': 'off'
-  },
+  rules: {},
   overrides: [
     // node files
     {
@@ -42,29 +32,22 @@ module.exports = {
         './testem.js',
         './blueprints/*/index.js',
         './config/**/*.js',
-        './server/**/*.js',
         './tests/dummy/config/**/*.js',
       ],
       parserOptions: {
-        sourceType: 'script'
+        sourceType: 'script',
       },
       env: {
         browser: false,
-        node: true
+        node: true,
       },
       plugins: ['node'],
       extends: ['plugin:node/recommended'],
-      rules: {
-        'node/no-unpublished-require': 'off',
-      },
     },
     {
       // test files
       files: ['tests/**/*-test.{js,ts}'],
       extends: ['plugin:qunit/recommended'],
-      rules: {
-        'qunit/require-expect': 'off',
-      },
     },
   ],
 };
